@@ -23,7 +23,7 @@ img {
 }
 
 .container {
-  max-width: 75vw;
+  max-width: 80vw;
   margin: 0 auto;
 }
 
@@ -46,7 +46,6 @@ img {
 
 .grid-item p {
   font-size: 1.5rem;
-  font-weight: 600;
   color: gray;
 }
 
@@ -57,16 +56,21 @@ img {
 
 .grid-item span {
   font-style: italic;
-  opacity: 0.7;
+
+  color: gray;
 }
 
 .detail {
   position: relative;
   top: 5px;
-  height: 10px;
+  height: 7px;
   width: 70%;
   bottom: -30px;
   background: linear-gradient(to right, #e5245a, #695ba3);
+}
+
+.grid-item:nth-child(1) {
+  margin-bottom: 50px;
 }
 
 .grid-item:nth-child(2) .detail {
@@ -85,22 +89,35 @@ img {
 }
 
 .grid-item:nth-child(1) img {
-  height: 26rem;
+  height: 36rem;
 }
 
 @media (max-width: 800px) {
+  .grid-item:nth-child(1) img,
+  .grid-item img {
+    height: 25rem;
+  }
+
   .grid-section {
     grid-template-columns: 1fr;
     column-gap: 0px;
   }
 
+  .grid-item:nth-child(1) h1 {
+    line-height: 50px;
+  }
+
   .grid-item {
     grid-column: 1/2;
+  }
+
+  .container {
+    max-width: 90vw;
   }
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 35px;
   text-align: center;
 }
 
@@ -109,6 +126,23 @@ footer div {
   opacity: 0.7;
 }
 
+footer p {
+  line-height: 1.1;
+}
+
 footer a {
   color: inherit;
+}
+
+@media (max-width: 480px) {
+  .grid-item h1,
+  .grid-item:nth-child(1) h1 {
+    font-size: 2rem;
+    line-height: 30px;
+  }
+
+  .grid-item p {
+    font-size: 1.2rem;
+    line-height: 20px;
+  }
 }
